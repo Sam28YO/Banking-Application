@@ -1,11 +1,16 @@
-import React from "react";
+
+import React from 'react';
+import Personal_Details from './Forms/Personal Details';
+
 
 const App = () => {
-  return (
-    <div>
-      <h1>MERN Stack Template</h1>
-    </div>
-  );
+
+
+    return (
+        <div>
+            <Personal_Details />
+        </div>
+    );
 };
 
 export default App;
