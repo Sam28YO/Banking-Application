@@ -11,6 +11,10 @@ const app = express();
 // Middleware
 app.use(express.json());
 
+//Routes
+app.use("/api/v1/test", require("./routes/testRoutes"));
+app.use("/api/v1/auth", require("./routes/authRoutes"));
+
 // Database Connection
 dbConfig();
 
