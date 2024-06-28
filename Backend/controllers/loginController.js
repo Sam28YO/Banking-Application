@@ -1,53 +1,13 @@
-const User = require("../models/userSchema");
+const User = require("../models/logindetailsSchema");
 const bcrypt = require("bcrypt");
 
 const userController = {
-  registerUser: async (req, res) => {
-    const { username, password, confirmPassword } = req.body;
-
-    try {
-      let existingUser = await User.findOne({ username });
-
-      if (existingUser) {
-        return res.status(400).json({
-          success: false,
-          message: "Username already exists",
-        });
-      }
-
-      const newUser = new User({
-        username,
-        password,
-        confirmPassword,
-      });
-
-      const salt = await bcrypt.genSalt(10);
-      newUser.password = await bcrypt.hash(password, salt);
-
-      await newUser.save();
-
-      return res.status(201).json({
-        success: true,
-        message: "User registered successfully",
-        user: {
-          _id: newUser._id,
-          username: newUser.username,
-        },
-      });
-    } catch (error) {
-      console.error("Error in Register User API:", error);
-      return res.status(500).json({
-        success: false,
-        message: "Error in Register User API",
-        error: error.message,
-      });
-    }
-  },
 
   loginUser: async (req, res) => {
     const { username, password } = req.body;
 
     try {
+      // Find the user by username
       let user = await User.findOne({ username });
 
       if (!user) {
@@ -66,6 +26,7 @@ const userController = {
         });
       }
 
+     
       return res.status(200).json({
         success: true,
         message: "Login successful",
