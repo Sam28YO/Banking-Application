@@ -1,0 +1,187 @@
+
+body {
+    background-color: #fff;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+h2{
+    color: black;
+}
+h1 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #333;
+    font-weight: bold;
+}
+
+p {
+    margin-bottom: 20px;
+    color: #666;
+    font-size: 14px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    background-color: #f1f1f1;
+    color: black;
+}
+
+select.form-control {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="%23333" d="M12 6l-4 4-4-4z"/></svg>') no-repeat right 10px center;
+    background-size: 12px;
+    background-color: #f1f1f1;
+}
+
+select.form-control::-ms-expand {
+    display: none;
+}
+
+.btn {
+    padding: 10px 15px;
+    margin: 10px 0;
+    width: 100%;
+    background-color: #b30000;
+    color: white;/* LoginForm.css */
+
+    body {
+        background-color: #fff;
+        font-family: 'Arial', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    
+    .container {
+        width: 100%;
+        max-width: 400px;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+    
+    h1 {
+        margin-bottom: 10px;
+        font-size: 20px;
+        color: #333;
+        font-weight: bold;
+    }
+    
+    p {
+        margin-bottom: 20px;
+        color: #666;
+        font-size: 14px;
+    }
+    
+    .input-group {
+        margin-bottom: 15px;
+        text-align: left;
+    }
+    
+    .input-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 14px;
+        color: #333;
+    }
+    
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+        font-size: 14px;
+        background-color: #f1f1f1;
+   
+    }
+    
+    select.form-control {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="%23333" d="M12 6l-4 4-4-4z"/></svg>') no-repeat right 10px center;
+        background-size: 12px;
+        background-color: #f1f1f1;
+        color: #333; /* Ensuring the placeholder color matches */
+    }
+    
+    select.form-control::-ms-expand {
+        display: none;
+    }
+    
+    .btn {
+        padding: 10px 15px;
+        margin: 10px 0;
+        width: 100%;
+        background-color: #b30000;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+    }
+    
+    .btn:hover {
+        background-color: #800000;
+    }
+    
+    #continue-btn {
+        float: right;
+    }
+    
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #800000;
+}
+
+#continue-btn {
+    float: right;
+}
+
