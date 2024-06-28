@@ -1,0 +1,85 @@
+
+.heading{
+    font-size: 13px;
+    position: relative;
+    top: 19px;
+    font-family: Arial, sans-serif;
+    color: #b22222;
+    display: flex;
+    align-self: flex-start;
+}
+.address-suggestion-container {
+    position: relative;
+    width: 450px;
+    margin: 0 4%;
+    font-family: Arial, sans-serif;
+    
+}
+
+.address-input {
+    width: 100%;
+    padding: 12px 20px;
+    margin-top: 27px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.address-input:focus {
+    border-color: red;
+    outline: none;
+}
+
+
+.suggestions {
+    border: 1px solid #ccc;
+    border-top: none;
+    max-height: 200px;
+    overflow-y: auto;
+    display: block;
+    position: absolute;
+    background-color: #EEEEEE;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 1;
+    border-radius: 0 0 4px 4px;
+}
+
+
+.suggestion-item {
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.3s ease;
+}
+
+.suggestion-item:last-child {
+    border-bottom: none;
+}
+
+.suggestion-item:hover {
+    background-color: #c8c5c5bd;
+}
+
+
+.suggestions::-webkit-scrollbar {
+    width: 12px; 
+}
+
+.suggestions::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 10px;
+}
+
+.suggestions::-webkit-scrollbar-thumb {
+    background: rgba(81, 4, 4, 0.768); 
+    border-radius: 10px;
+    border: 3px solid #f1f1f1; 
+}
+
+.suggestions::-webkit-scrollbar-thumb:hover {
+    background: rgba(47, 2, 2, 0.768); 
+}
