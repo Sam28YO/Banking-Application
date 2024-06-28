@@ -88,7 +88,7 @@ const Popup = ({
           className="border border-gray-300 rounded-lg p-2 w-full mb-4"
         />
 
-        <button className="bg-red-700 text-white rounded-lg py-2 px-4 w-full" onClick={handleSave}>Save</button>
+        <button className="bg-blue-600 text-white rounded-lg py-2 px-4 w-full" onClick={handleSave}>Save</button>
       </div>
     </div>
   );

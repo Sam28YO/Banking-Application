@@ -3,6 +3,8 @@ import AddressDetails from './AddressDetails';
 import FixedTopBar from './TopBar';
 
 const Personal_Details = () => {
+
+  
   const [errors, setErrors] = useState({});
   const [personalSubmitted, setPersonalSubmitted] = useState(false);
   const [progress, setProgress] = useState(0);
@@ -65,11 +67,11 @@ const Personal_Details = () => {
   };
 
   return (
-    <div className='flex flex-col min-h-screen bg-white items-center justify-center'>
+    <div className='flex flex-col min-h-screen bg-slate-300 items-center justify-center'>
       <FixedTopBar percentage={progress} /> 
       <div className='flex flex-col w-3/5 items-center justify-center mt-8'>
         <form onSubmit={handleSubmit} className='w-full'>
-          <div className="flex flex-col items-center justify-center min-h-screen bg-white w-full">
+          <div className="flex flex-col items-center justify-center min-h-screen bg-slate-300 w-full">
             <div className="flex flex-col items-start bg-white border border-gray-300 rounded-lg p-4 shadow-md text-center w-full mt-12">
               <h2 className="text-xl font-semibold mb-2">Your journey starts here</h2>
               <p className="mb-2">Set up your Easy access account</p>
@@ -77,7 +79,7 @@ const Personal_Details = () => {
 
             <div className="flex flex-col items-start bg-white border border-gray-300 rounded-lg p-10 shadow-md text-center w-full mt-4 mb-4">
               <p className="mb-2">
-                <span className="text-red-700 font-semibold">01 </span>
+                <span className="text-blue-700 font-semibold">01 </span>
                 <span className="font-medium">Personal Details </span>
               </p>
               <p className="mb-2">Tell us a bit about yourself</p>
@@ -99,7 +101,7 @@ const Personal_Details = () => {
               </div>
 
               <div className='flex flex-col self-start w-full'>
-                <p className={`self-start mb-1 text-sm ${errors.day || errors.month || errors.year ? 'text-red-600' : 'text-gray-600'}`}>DATE OF BIRTH (DD/MM/YYYY)*</p>
+                <p className={`self-start mb-1 text-sm ${errors.day || errors.month || errors.year ? 'text-red-600' : 'text-gray-600'}`}>DATE OF BIRTH*</p>
                 <span className='flex flex-row w-1/2 justify-evenly'>
                   <select className={`border ${errors.day ? 'border-red-600' : 'border-gray-300'} rounded-lg p-2 mb-2 mr-1 w-1/3`} placeholder='DD' name='day' type='text'>
                     <option value=''>Day</option>
@@ -128,7 +130,7 @@ const Personal_Details = () => {
               </div>
             </div>
 
-            <button type="submit" className="bg-red-700 text-white rounded-lg py-2 px-4 my-2 hover:bg-red-500 self-end">Continue</button>
+            <button type="submit" className="bg-blue-600 text-white rounded-lg py-2 px-4 my-2 hover:border-2 hover:border-white self-end">Continue</button>
           </div>
         </form>
       </div>

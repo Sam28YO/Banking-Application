@@ -114,7 +114,7 @@ const AddressDetails = ({ onComplete }) => {
         className="flex flex-col items-start bg-white border border-gray-300 rounded-lg p-10 shadow-md text-center w-full mt-2 mb-4"
       >
         <p className="mb-2">
-          <span className="text-red-700 font-semibold">02 </span>
+          <span className="text-blue-700 font-semibold">02 </span>
           <span className="font-medium">Home address </span>
         </p>
         <p className="mb-6">Please provide your current home address</p>
@@ -141,7 +141,7 @@ const AddressDetails = ({ onComplete }) => {
             <p>{addressDetails.country}</p>
             <a
               href="#"
-              className="text-red-600 hover:underline block self-end mr-2"
+              className="text-blue-600 hover:underline block self-end mr-2"
               onClick={handleRemoveAddress}
             >
               Remove address
@@ -151,7 +151,7 @@ const AddressDetails = ({ onComplete }) => {
 
         <a
           href="#"
-          className="text-red-600 hover:underline mb-2 block"
+          className="text-blue-600 hover:underline mb-2 block"
           onClick={handleLinkClick}
         >
           {address ? 'Change address >' : 'Prefer to enter address manually >'}
@@ -179,7 +179,7 @@ const AddressDetails = ({ onComplete }) => {
           />
         )}
 
-        <p className="text-red-600 text-sm mb-2 my-2">
+        <p className="text-blue-600 text-sm mb-2 my-2">
           HOW LONG HAVE YOU LIVED AT THIS ADDRESS?*
         </p>
         <p className="mb-4 text-sm">
@@ -187,14 +187,14 @@ const AddressDetails = ({ onComplete }) => {
         </p>
         <span>
           <button
-            className="border-2 border-red-600 rounded-lg py-3 px-3 mr-4 hover:bg-red-700 hover:text-white"
+            className="border-2 border-blue-600 rounded-lg py-3 px-3 mr-4 hover:bg-blue-700 hover:text-white"
             style={getButtonStyle('6 months or more')}
             onClick={(e) => handleDurationClick(e, '6 months or more')}
           >
             6 months or more
           </button>
           <button
-            className="border-2 border-red-600 rounded-lg py-3 px-3 hover:bg-red-700 hover:text-white"
+            className="border-2 border-blue-600 rounded-lg py-3 px-3 hover:bg-blue-700 hover:text-white"
             style={getButtonStyle('Less than 6 months')}
             onClick={(e) => handleDurationClick(e, 'Less than 6 months')}
           >
@@ -204,7 +204,7 @@ const AddressDetails = ({ onComplete }) => {
         {durationError && <p className="text-red-600 text-sm mt-1">Please select duration of residency</p>}
       </div>
       <button
-        className="bg-red-700 text-white rounded-lg py-2 px-4 mt-2 hover:bg-red-500 self-end"
+        className="bg-blue-600 text-white rounded-lg py-2 px-4 mt-2 hover:bg-blue-500 self-end"
         onClick={handleContinueClick}
       >
         Continue
