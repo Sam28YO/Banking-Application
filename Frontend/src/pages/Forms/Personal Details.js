@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import AddressDetails from './AddressDetails';
 import FixedTopBar from './TopBar';
+import { useNavigate } from "react-router-dom";
 
 const Personal_Details = () => {
-
-  
   const [errors, setErrors] = useState({});
   const [personalSubmitted, setPersonalSubmitted] = useState(false);
   const [progress, setProgress] = useState(0);
@@ -22,7 +21,7 @@ const Personal_Details = () => {
     return age;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.target;
     const firstName = form.elements['first-name'];
@@ -37,15 +36,9 @@ const Personal_Details = () => {
 
     if (!firstName.value) newErrors.firstName = 'Please enter your first name';
     if (!lastName.value) newErrors.lastName = 'Please enter your last name';
-    if (!day.value) {
-      newErrors.day = 'day ';
-    } 
-    if (!month.value) {
-      newErrors.month = 'month ';
-    }
-    if (!year.value) {
-      newErrors.year = 'year ';
-    }
+    if (!day.value) newErrors.day = 'Please enter the day';
+    if (!month.value) newErrors.month = 'Please enter the month';
+    if (!year.value) newErrors.year = 'Please enter the year';
 
     if (!newErrors.day && !newErrors.month && !newErrors.year) {
       const age = calculateAge(day.value, month.value, year.value);
@@ -59,6 +52,32 @@ const Personal_Details = () => {
     if (Object.keys(newErrors).length === 0) {
       setPersonalSubmitted(true);
       setProgress(16.67); 
+
+      const customerData = {
+        firstName: firstName.value,
+        lastName: lastName.value,
+        dateOfBirth: `${year.value}-${month.value}-${day.value}`,
+      };
+
+      try {
+        const response = await fetch("http://localhost:4000/api/v1/auth/register", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(customerData),
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+          console.log("Customer registered successfully:", data.customer);
+        } else {
+          console.log("Registration failed:", data.message);
+        }
+      } catch (error) {
+        console.error("Error in registration:", error);
+      }
     }
   };
 

@@ -41,7 +41,7 @@ const EmploymentDetails = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
-      const apiUrl = "";
+      const apiUrl = "http://localhost:4000/api/v1/auth/employmentDetails";
 
       const data = {
         employmentStatus: selectedEmployment,
@@ -103,7 +103,7 @@ const EmploymentDetails = () => {
             <p className="font-medium">What's your annual salary?</p>
             <p className="mb-3">This includes your salary, bonus, incentives or other compensation you may receive.</p>
             <div className="flex flex-row justify-evenly w-full mb-4">
-              {["0-24,999", "25,000-49,000", "50,000-99,000", "100,000-149,999", "150,000"].map((range) => (
+              {["£0-£24,999","£25,000-£49,999","£50,000-£99,000","£100,000-£149,999", "£150,000+"].map((range) => (
                 <button
                   key={range}
                   type="button"
@@ -154,7 +154,7 @@ const EmploymentDetails = () => {
             <p className="font-medium">What's your annual income?</p>
             <p className="mb-3">You can give an approximate number according to your wages.</p>
             <div className="flex flex-row justify-evenly w-full mb-4">
-              {["0-24,999", "25,000-49,000", "50,000-99,000", "100,000-149,999", "150,000"].map((range) => (
+              {["£0-£24,999","£25,000-£49,999","£50,000-£99,000","£100,000-£149,999", "£150,000+"].map((range) => (
                 <button
                   key={range}
                   type="button"
@@ -171,7 +171,7 @@ const EmploymentDetails = () => {
           </div>
         );
 
-      case "Self employed":
+      case "Self-employed":
         return (
           <div className="flex flex-col items-start w-full">
             <p className="font-medium">What industry do you work in?</p>
@@ -205,7 +205,7 @@ const EmploymentDetails = () => {
             <p className="font-medium">What's your annual income?</p>
             <p className="mb-3">This includes your salary, benefits, investments or other income you may receive.</p>
             <div className="flex flex-row justify-evenly w-full mb-4">
-              {["0-24,999", "25,000-49,000", "50,000-99,000", "100,000-149,999", "150,000"].map((range) => (
+              {["£0-£24,999","£25,000-£49,999","£50,000-£99,000","£100,000-£149,999", "£150,000+"].map((range) => (
                 <button
                   key={range}
                   type="button"
@@ -256,7 +256,7 @@ const EmploymentDetails = () => {
             <p className="font-medium">What's your annual income?</p>
             <p className="mb-3">This includes your pension, investments or retirement benefits you may receive.</p>
             <div className="flex flex-row justify-evenly w-full mb-4">
-              {["0-24,999", "25,000-49,000", "50,000-99,000", "100,000-149,999", "150,000"].map((range) => (
+              {["£0-£24,999","£25,000-£49,999","£50,000-£99,000","£100,000-£149,999", "£150,000+"].map((range) => (
                 <button
                   key={range}
                   type="button"
@@ -307,7 +307,7 @@ const EmploymentDetails = () => {
             <p className="font-medium">What's your annual income?</p>
             <p className="mb-3">This includes any side job and stipend you may be receiving.</p>
             <div className="flex flex-row justify-evenly w-full mb-4">
-              {["0-24,999", "25,000-49,000", "50,000-99,000", "100,000-149,999", "150,000"].map((range) => (
+              {["£0-£24,999","£25,000-£49,999","£50,000-£99,000","£100,000-£149,999", "£150,000+"].map((range) => (
                 <button
                   key={range}
                   type="button"
@@ -350,7 +350,7 @@ const EmploymentDetails = () => {
             <p className="mb-4">We ask this to improve security on your account.</p>
 
             <div className="flex flex-row justify-evenly w-full mb-4">
-              {["Full-time employed", "Part-time employed", "Self employed", "Retired", "Student", "Not in employment"].map((status) => (
+              {["Full-time employed", "Part-time employed", "Self-employed", "Retired", "Student", "Not in employment"].map((status) => (
                 <button
                   key={status}
                   type="button"
