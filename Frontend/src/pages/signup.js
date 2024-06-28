@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+
 import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
   const navigate = useNavigate();
+
   const [checkedState, setCheckedState] = useState([
     false,
     false,
@@ -96,6 +98,7 @@ const SignUp = () => {
                   : "bg-gray-300 cursor-not-allowed"
               }`}
               disabled={!isButtonEnabled}
+
               onClick={() => isButtonEnabled && navigate('/personalDetails')}
             >
               Sign up
@@ -108,4 +111,6 @@ const SignUp = () => {
   );
 };
 
+
 export default SignUp;
+
