@@ -3,6 +3,7 @@ import FixedTopBar from './TopBar';
 
 const EmploymentDetails = () => {
   const [progress, setProgress] = useState(33.33);
+  const sections = ["Personal details", "Account details", "Final details"];
   const [selectedEmployment, setSelectedEmployment] = useState("");
   const [selectedRange, setSelectedRange] = useState("");
   const [industry, setIndustry] = useState("");
@@ -41,7 +42,7 @@ const EmploymentDetails = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
-      const apiUrl = "http://localhost:4000/api/v1/auth/employmentDetails";
+      const apiUrl = "http://localhost:8050/api/v1/auth/employmentDetails";
 
       const data = {
         employmentStatus: selectedEmployment,
@@ -338,7 +339,7 @@ const EmploymentDetails = () => {
 
   return (
     <div className='flex flex-col min-h-screen bg-slate-300 items-center justify-center'>
-      <FixedTopBar percentage={progress} />
+      <FixedTopBar percentage={progress} sections={sections}/>
       <div className='flex flex-col w-3/5 items-center justify-center mt-8'>
         <form className="w-full flex flex-col" onSubmit={handleSubmit}>
           <div className="flex flex-col items-start bg-white border border-gray-300 rounded-lg p-4 shadow-md text-center w-full mt-12">
