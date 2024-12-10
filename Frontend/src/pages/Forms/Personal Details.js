@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import AddressDetails from './AddressDetails';
 import FixedTopBar from './TopBar';
-import { useNavigate } from "react-router-dom";
 
 const Personal_Details = () => {
   const [errors, setErrors] = useState({});
   const [personalSubmitted, setPersonalSubmitted] = useState(false);
   const [progress, setProgress] = useState(0);
+  const sections = ["Personal details", "Account details", "Final details"];
 
   const calculateAge = (day, month, year) => {
     const today = new Date();
@@ -58,9 +58,9 @@ const Personal_Details = () => {
         lastName: lastName.value,
         dateOfBirth: `${year.value}-${month.value}-${day.value}`,
       };
-
+//have to fix, if saving data from each form individually
       try {
-        const response = await fetch("http://localhost:4000/api/v1/auth/register", {
+        const response = await fetch("http://localhost:8050/api/v1/auth/register", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -87,7 +87,7 @@ const Personal_Details = () => {
 
   return (
     <div className='flex flex-col min-h-screen bg-slate-300 items-center justify-center'>
-      <FixedTopBar percentage={progress} /> 
+      <FixedTopBar percentage={progress} sections={sections} /> 
       <div className='flex flex-col w-3/5 items-center justify-center mt-8'>
         <form onSubmit={handleSubmit} className='w-full'>
           <div className="flex flex-col items-center justify-center min-h-screen bg-slate-300 w-full">

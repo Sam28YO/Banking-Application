@@ -97,13 +97,13 @@ const AddressDetails = ({ onComplete }) => {
     }
     if (isValid) {
       onComplete();
-      //have to add post here to send data to db and save it 
+      //have to add post here to send data to db and save it + navigate to next form
     }
   };
 
   const getButtonStyle = (duration) => {
     return durationSelected === duration
-      ? { backgroundColor: '#b91c1c', color: 'white' } 
+      ? { backgroundColor: '#2563eb', color: 'white' } 
       : {};
   };
 

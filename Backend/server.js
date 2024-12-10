@@ -1,25 +1,31 @@
 const express = require("express");
-const mongoose = require("mongoose");
 const dotenv = require("dotenv");
-const dbConfig = require("./config/db");
+const colors = require("colors");
+const morgan = require("morgan");
+const cors = require("cors");
+const connectDB = require("./config/db");
 
-// Load environment variables
+//dot config
 dotenv.config();
 
+//mongoDB connection
+connectDB();
+
+//rest object
 const app = express();
 
-// Middleware
+//middlewares
 app.use(express.json());
+app.use(cors());
+app.use(morgan("dev"));
 
-// Database Connection
-dbConfig();
+//Routes
+app.use("/api/v1/test", require("./routes/testRoutes"));
+app.use("/api/v1/auth", require("./routes/authRoutes"));
 
-app.get("/", (req, res) => {
-  res.send("API is running...");
-});
+//port
+const PORT = process.env.PORT || 8050;
 
-// Start Server
-const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`Node Server Running On Port ${process.env.PORT}`.bgBlue.white);
 });
